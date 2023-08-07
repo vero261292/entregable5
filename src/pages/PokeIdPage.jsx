@@ -10,14 +10,15 @@ const PokeIdPage = () => {
 
   useEffect(() => {
     getSinglePokemon
-  },[])
-  console.log(pokemon);
+  },[id])
+  
 
 
 
   return (
     <article>
-      <img src={pokemon?.sprites} alt="" />
+      <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+      <h2>{pokemon?.name}</h2>
     </article>
   )
 }

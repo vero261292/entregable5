@@ -45,8 +45,15 @@
     padding-right: 0.7em;
   }
 
+  .pokecard__hr {
+    margin-bottom: 1em;
+    border: 1px solid #ccc4;
+  }
 
-.pokecard {
+   
+
+  
+  .pokecard {
     width: 100%;
     max-width: 350px;
     border-radius: 0.7em;

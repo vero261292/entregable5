@@ -1,46 +1,67 @@
 
 import {  useSelector } from "react-redux/es/hooks/useSelector"
 import useFetch from "../hook/useFetch"
-import { useEffect } from "react"
-
+import { useEffect, useRef, useState } from "react"
+import PokeCard from "../components/pokedexPage/PokeCard"
+import SelectType from "../components/PokedexPage/SelectType"
 
 const PokedexPage = () => {
 
 
+  const [inputValue, setInputValue] = useState('')
+  const [selectValue, setSelectValue] = useState('allPokemons')
+
+  
+
+
   const trainer = useSelector(reducer => reducer.trainer)
 
-  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
-  const [ pokemons, getAllPokemons ] = useFetch(url)
+  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=180'
+  const [ pokemons, getAllPokemons, getPokemonByType ] = useFetch(url)
 
 
 
   useEffect(() => {
-    getAllPokemons()
-  }, [])
+    if(selectValue === 'allPokemons'){
+      getAllPokemons()
+    } else {
+      getPokemonByType(selectValue)
+    }
+  }, [selectValue])
 
-  console.log(pokemons)
+  
 
   const inputSearch = useRef()
 
   const handleSubmit = e => {
     e.preventDefault()
-    setInputValue(inputSearch.current.value.trin().toLowerCase())
+    setInputValue(inputSearch.current.value.trim().toLowerCase())
   }
-  const cbFilter = poke => poke.name.includes(inputValue)
+
+
+  const cbFilter = poke => {
+    const filterInput = poke.name.includes(inputValue)
+
+
+
+    return filterInput
+  }
 
 
 
   return (
     <div>
-      <p><span>wolcome {trainer}</span>hare your favorite pokemon.</p>
+      <p><span>wolcome {trainer}</span>hare you find your favorite pokemon.
+      </p>
       <form onSubmit={handleSubmit}>
         <input ref={inputSearch} type="text" />
         <button>Search</button>
       </form>
+      <SelectType setSelectValue={setSelectValue}/>
       <div>
         {
-          pokemons?.results.map(poke => (
-            <pokeCard 
+          pokemons?.results.filter(cbFilter).map(poke => (
+            <PokeCard 
               key={poke.url}
               url={poke.url}
             />  
@@ -48,8 +69,8 @@ const PokedexPage = () => {
         }
       </div>
     </div>
-
   )
 }
 
 export default PokedexPage
+
