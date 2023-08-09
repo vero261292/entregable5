@@ -5,7 +5,7 @@ import './styles/PokeCard.css'
 
 
 
-const PokeCard = ({url}) => {
+const PokeCard = ({ url }) => {
   
 
     const [pokemon, getSinglePokemon ] = useFetch(url)
@@ -18,14 +18,17 @@ const PokeCard = ({url}) => {
 
     const navigate = useNavigate()
 
-    const handleClickc= () => {
+    const handleClick= () => {
       navigate(`/pokedex/${pokemon.id}`)
     }
 
     return (
-      <article className="pokecard" onClick={handleClickc}>
+      <article className="pokecard" onClick={handleClick}>
         <header className="pokecard__header">
-            <img className="pokecard__image" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+            <img 
+            className="pokecard__image" 
+            src={pokemon?.sprites.other['official-artwork'].front_default} alt="" 
+            />
         </header>
         <section className="pokecard__body">
             <h3 className="pokecard__name">{pokemon?.name}</h3>
@@ -41,7 +44,7 @@ const PokeCard = ({url}) => {
               {
                 pokemon?.stats.map(statInfo => (
                   <li className="pokecard__stat" key={statInfo.stat.url}>
-                    <h4 className="pokecard__stat-name">{statInfo.stat.name}</h4>
+                    <h4 className="pokecard__stat__name">{statInfo.stat.name}</h4>
                     <span className="pokecard__stat__value">{statInfo.base_stat}</span>
                   </li>
                   

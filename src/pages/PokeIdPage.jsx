@@ -1,5 +1,6 @@
 import { useEffect } from "react"
-import { useFetch, useParams } from "react-router-dom"
+import {  useParams } from "react-router-dom"
+import useFetch from "../hook/useFetch"
 
 const PokeIdPage = () => {
 
