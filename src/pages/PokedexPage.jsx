@@ -16,7 +16,7 @@ const PokedexPage = () => {
 
   const trainer = useSelector(reducer => reducer.trainer)
 
-  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20'
+  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=150'
   const [ pokemons, getAllPokemons, getPokemonByType ] = useFetch(url)
 
 
@@ -51,7 +51,8 @@ const PokedexPage = () => {
 
   return (
     <div>
-      <p><span>wolcome {trainer}</span>hare you find your favorite pokemon.</p>
+      <p><span>wolcome {trainer}</span>hare you find your favorite pokemon.
+      </p>
       <form onSubmit={handleSubmit}>
         <input ref={inputSearch} type="text" />
         <button>Search</button>

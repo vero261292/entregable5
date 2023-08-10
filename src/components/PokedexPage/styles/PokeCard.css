@@ -1,6 +1,6 @@
 .pokecard {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     border-radius: 0.7em;
     border: 0.7em solid #ccc;
     cursor: pointer;
@@ -31,74 +31,178 @@
     font-weight: 400;
     margin-bottom: 0.2em;
   }
+
   .pokecard__types {
     display: flex;
     justify-content: center;
     gap: 0.7em;
     margin-bottom: 1em;
   }
+
+
   .pokecard__typename {
     text-transform: capitalize;
   }
+
+
   .pokecard__typename:nth-child(2)::before {
     content: '/';
     padding-right: 0.7em;
   }
+
+
 
   .pokecard__hr {
     margin-bottom: 1em;
     border: 1px solid #ccc4;
   }
+  
+
+  .pokecard__stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 1em 0.2em;
+  }
+
+
+  .pokecard__stat {
+    display: grid;
+    gap: 0.5em;
+    justify-items: center;
+  }
+  
+
+
+  .pokecard__stat__name{
+    font-size: 0.7em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 
    
+.pokecard__stat__value{
+  font-weight: 500;
+  font-size: 1rem;
+}
+  
+.fire-gradient {
+  background: linear-gradient(176.92deg, #f9606f -32.26%, #E35825 22.55%, #E8AE18 125.72%);
+}
 
+
+
+
+.grass-gradient{
+  background: linear-gradient(178.37deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+}
+
+.grass-border {
+  border-color: #82B2F1;
+}
+
+
+
+.water-gradient{
+  background: linear-gradient(179.57deg, #133258 -70.14%, #1479FB 56.16%, #82B2F1 214.85%);
+}
+.water-border {
+  border-color: #16447c;
+}
   
-  .pokecard {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 0.7em;
-    border: 0.7em solid #ccc;
-    cursor: pointer;
-    transition: transform 150ms ease;
-  }
-  .pokecard:hover {
-    transform: scale(1.03);
-  }
-  .pokecard__header {
-    background-color: #999;
-    aspect-ratio: 2;
-    position: relative;
-  }
-  .pokecard__image {
-    position: absolute;
-    width: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 1.5em;
-  }
-  .pokecard__body {
-    padding: 3.5em 1em 2em;
-  }
-  .pokecard__name {
-    text-align: center;
-    text-transform: capitalize;
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 0.2em;
-  }
-  .pokecard__types {
-    display: flex;
-    justify-content: center;
-    gap: 0.7em;
-    margin-bottom: 1em;
-  }
-  .pokecard__typename {
-    text-transform: capitalize;
-  }
-  .pokecard__typename:nth-child(2)::before {
-    content: '/';
-    padding-right: 0.7em;
-  }
+
+.bug-gradient {
+  background: linear-gradient(177.56deg, #620860 -58.92%, #388039 16.57%, #AAFFA8 209.53%);
+}
+
+.bug-border {
+  border-color: #388039;
+}
+
+.electric-gradient{
+  background: rgb(206, 206, 28);
+}
+.electric-border  {
+  border-color: hsl(59, 88%, 32%);
+}
+
+.poison-gradient {
+  background: hsl(301, 78%, 45%);
+}
+.poison-border {
+  border-color: hwb(301 29% 38%);
+}
+
+.normal-gradient {
+  background: #82B2F1;
+}
+
+.normal-border {
+  border-color: hsl(240, 41%, 58%);
+}
+
+.fighting-gradient {
+  background: hwb(0 15% 30%);
+}
+.fighting-border {
+  border-color: #a85252;
+}
+
+.ground-gradient {
+  background: pink;
+}
+.ground-border {
+  border-color: #a85252;
+}
+
+.fairy-gradient {
+  background: goldenrod;
+}
+.fairy-border {
+  border-color: hsla(60, 100%, 50%, 0.747);
+}
+
+
+.psychic-gradient {
+  background: hsl(60, 71%, 41%);
+}
+.psychic-border {
+  border-color: #AAFFA8;
+}
+
+
+.rock-gradient {
+  background: hwb(0 32% 34% / 0.589);
+}
+.rock-border {
+  border-color: #a85252;
+}
+
+.ghost-gradient {
+  background: rgb(204, 40, 204);
+}
+.ghost-border{
+  border-color: #5a2059;
+}
+
+.ice-gradient {
+  background: hsl(300, 72%, 41%);
+}
+.ice-border {
+  border-color: #620860;
+}
+
+.dragon-gradient {
+  background: #3e6494;
+}
+.dragon-border {
+  border-color: #16447c;
+}
+
+.fire-border {
+  border-color: #72290fc4;
   
-  
-  
+}
+.fire-color {
+  color: #be3c0dc4;
+}

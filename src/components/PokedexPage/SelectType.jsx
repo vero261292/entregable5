@@ -5,7 +5,7 @@ import useFetch from "../../hook/useFetch"
 
 const  SelectType = ({ setSelectValue }) => {
 
-  const url = 'https://pokemon.co/api/v2/type'
+  const url = 'https://pokeapi.co/api/v2/type'
   const [types, getAllTypes ] = useFetch(url)
 
 
@@ -20,7 +20,7 @@ const  SelectType = ({ setSelectValue }) => {
 
   return (
     <select  onChange={handleChange}>
-      <option value="allPokemons">All Pokemons</option>
+      <option value="allPokemons">All POKEMON</option>
       {
         types?.results.map(type => (
           <option key={type.url} value={type.url}>{type.name}</option>
