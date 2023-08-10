@@ -57,7 +57,7 @@ const PokedexPage = () => {
         <input ref={inputSearch} type="text" />
         <button>Search</button>
       </form>
-      <SelectType setSelectValue={setSelectValue}/>
+      <SelectType setSelectValue={setSelectValue} />
       <div>
         {
           pokemons?.results.filter(cbFilter).map(poke => (
