@@ -3,7 +3,7 @@ import useFetch from "../../hook/useFetch"
 
 
 
-const SelectType  = ({setSelectValue}) => {
+const SelectType = ({setSelectValue}) => {
 
   const url = 'https://pokeapi.co/api/v2/type'
   const [types, getAllTypes ] = useFetch(url)

@@ -9,7 +9,7 @@ const useFetch = (url) => {
     const getApi = () => {
       axios
         .get(url)
-        .then(resp => setInfoApi(resp.data))
+        .then(res => setInfoApi(res.data))
         .catch(err => console.log(err))
     }
 
