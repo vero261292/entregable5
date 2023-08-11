@@ -2,7 +2,7 @@
 import {  useSelector } from "react-redux/es/hooks/useSelector"
 import useFetch from "../hook/useFetch"
 import { useEffect, useRef, useState } from "react"
-import PokeCard from "../components/pokedexPage/PokeCard"
+import PokeCard from "../components/PokedexPage/PokeCard"
 import SelectType from "../components/PokedexPage/SelectType"
 
 const PokedexPage = () => {
